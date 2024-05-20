@@ -1,0 +1,19 @@
+/* public/css/styles.css */
+
+/* Style pour la barre de navigation */
+.navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Bordure inférieure */
+}
+
+.navbar-brand {
+    font-size: 24px; /* Taille de la police */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px; /* Taille de la police */
+    margin-left: 20px; /* Marge entre les liens */
+}
+
+.navbar-toggler-icon {
+    background-color: #fff; /* Couleur de l'icône du bouton de bascule */
+}

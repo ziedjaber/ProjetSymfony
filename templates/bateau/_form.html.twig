@@ -1,0 +1,16 @@
+{# bateau/_form.html.twig #}
+
+{{ form_start(form, {'attr': {'class': 'form'}}) }}
+<div class="form-group">
+    {{ form_label(form.Nom, null, {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.Nom, {'attr': {'class': 'form-control'}}) }}
+</div>
+<div class="form-group">
+    {{ form_label(form.Prix, null, {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.Prix, {'attr': {'class': 'form-control'}}) }}
+</div>
+{# Ajoutez d'autres champs de formulaire ici avec les classes Bootstrap appropriées #}
+<div class="form-group">
+    <button type="submit" class="btn btn-primary">Create</button>
+</div>
+{{ form_end(form) }}

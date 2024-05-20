@@ -1,0 +1,13 @@
+/* public/css/styles.css */
+
+/* Style pour le titre */
+h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Style pour les boutons */
+.btn {
+    margin-right: 10px;
+}

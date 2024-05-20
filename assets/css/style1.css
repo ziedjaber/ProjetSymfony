@@ -1,0 +1,28 @@
+/* public/css/styles.css */
+
+/* Style pour le titre */
+h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Style pour les boutons */
+.btn {
+    margin-right: 10px;
+}
+
+/* Style pour la table */
+.table th {
+    background-color: #f8f9fa; /* Couleur de fond des en-têtes de colonne */
+}
+
+/* Style pour les liens */
+a {
+    color: #007bff; /* Couleur des liens */
+    text-decoration: none; /* Supprimer la décoration de soulignement des liens */
+}
+
+a:hover {
+    text-decoration: underline; /* Ajouter un soulignement lors du survol des liens */
+}

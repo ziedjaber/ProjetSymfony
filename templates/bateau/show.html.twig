@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bateau{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="mb-4">Bateau</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ bateau.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ bateau.Nom }}</td>
+                </tr>
+                <tr>
+                    <th>Prix</th>
+                    <td>{{ bateau.Prix }}</td>
+                </tr>
+                <tr>
+                    <th>Capacite</th>
+                    <td>{{ bateau.Capacite }}</td>
+                </tr>
+                <tr>
+                    <th>Modele</th>
+                    <td>{{ bateau.Modele }}</td>
+                </tr>
+                <tr>
+                    <th>DateDeFabrication</th>
+                    <td>{{ bateau.DateDeFabrication ? bateau.DateDeFabrication|date('Y-m-d') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_bateau_index') }}" class="btn btn-secondary">Back to list</a>
+
+        <a href="{{ path('app_bateau_edit', {'id': bateau.id}) }}" class="btn btn-primary">Edit</a>
+
+        {{ include('bateau/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

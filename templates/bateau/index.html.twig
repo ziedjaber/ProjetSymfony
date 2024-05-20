@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bateau index{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/stylenav.css') }}">
+{% endblock %}
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('app_bateau_index') }}">Bateaux</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_category_index') }}">Categories</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h1>Bateau index</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Prix</th>
+                    <th>Capacité</th>
+                    <th>Modèle</th>
+                    <th>Date de Fabrication</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bateau in bateaus %}
+                    <tr>
+                        <td>{{ bateau.id }}</td>
+                        <td>{{ bateau.Nom }}</td>
+                        <td>{{ bateau.Prix }}</td>
+                        <td>{{ bateau.Capacite }}</td>
+                        <td>{{ bateau.Modele }}</td>
+                        <td>{{ bateau.DateDeFabrication ? bateau.DateDeFabrication|date('Y-m-d') : '' }}</td>
+                        <td>
+                            <a href="{{ path('app_bateau_show', {'id': bateau.id}) }}" class="btn btn-primary">Show</a>
+                            <a href="{{ path('app_bateau_edit', {'id': bateau.id}) }}" class="btn btn-secondary">Edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">No records found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_bateau_new') }}" class="btn btn-success">Create new</a>
+    </div>
+{% endblock %}

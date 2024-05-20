@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="mb-4">Edit Bateau</h1>
+
+        {{ include('bateau/_form.html.twig', {'button_label': 'Update'}) }}
+
+        <a href="{{ path('app_bateau_index') }}" class="btn btn-secondary">Back to list</a>
+
+        {{ include('bateau/_delete_form.html.twig') }}
+    </div>
+{% endblock %}
